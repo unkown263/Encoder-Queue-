@@ -55,7 +55,7 @@ async def ihelp(event):
 
 async def beck(event):
     await event.edit(
-        f"Hi `{event.sender.first_name}`\nThis is A EncoderQueue Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change (Depends on your Code)\nU can Generate Samples/screenshots too.",
+        f"Hi `{event.sender.first_name}`\nThis is A EncoderQueue Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change (Depends on your Code)\nYou can Generate Samples/screenshots too.",
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
