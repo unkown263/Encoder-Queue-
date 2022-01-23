@@ -1,9 +1,9 @@
 {
-    "name": "CompressorQueue",
+    "name": "Encoder-Queue-",
     "description": "A Normal Telegram Bot Which can Compress/encode/ Generate Samples of videos.",
     "logo": "https://telegra.ph/file/75ee20ec8d8c8bba84f02.jpg",
     "keywords": ["Telegram","python", "Video","Compressor","Encoder"],
-    "repository": "https://github.com/1Danish-00/CompressorQueue",
+    "repository": "https://github.com/unknown263/Encoder-Queue-",
     "success_url": "https://t.me/BotzHub",
     "stack": "container",
     "env": {
