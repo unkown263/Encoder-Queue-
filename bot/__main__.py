@@ -181,7 +181,7 @@ async def something():
                         ),
                     )
                 ds = await e.client.send_file(
-                    e.chat_id, file=ok, force_document=True, thumb=thum
+                    e.chat_id, file=ok, filename=og, force_document=True, thumb=thum
                 )
                 await nnn.delete()
                 org = int(Path(dl).stat().st_size)
