@@ -13,7 +13,7 @@
 # License can be found in
 # <https://github.com/1Danish-00/CompressorQueue/blob/main/License> .
 
-
+import anitopy
 from . import *
 from .devtools import *
 
@@ -126,13 +126,26 @@ async def something():
                 aa = kk.split(".")[-1]
                 rr = "encode"
                 bb = kk.replace(f".{aa}", " Encoded.mkv")
+                nam = bb.replace("_", " ")
+                nam = bb.replace(".", " ")
+                anitopy_options = {'allowed_delimiters': ' '}
+                new_name = anitopy.parse(nam)
+                anime_name = new_name['anime_title']  
+                joined_string = f"[{anime_name}]"
+                if 'anime_season' in new_name.keys():
+                  animes_season = new_name['anime_season']
+                  joined_string = f"{joined_string}" + f" [Season {animes_season}]"
+                if 'episode_number' in new_name.keys():
+                  episode_no = new_name['episode_number']
+                  joined_string = f"{joined_string}" + f" [Episode {episode_no}]"
+                  og = joined_string + " [@S136r136a1]" 
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
                 dtime = ts(int((es - s).seconds) * 1000)
                 hehe = f"{out};{dl};{list(QUEUE.keys())[0]}"
                 wah = code(hehe)
                 nn = await e.edit(
-                    "`Encodin'..`",
+                    "`Encoding'..`",
                     buttons=[
                         [Button.inline("STATS", data=f"stats{wah}")],
                         [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
@@ -161,13 +174,14 @@ async def something():
                     ok = await upload_file(
                         client=e.client,
                         file=f,
+                        filename=og,
                         name=out,
                         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                             progress(d, t, nnn, ttt, "uploading..")
                         ),
                     )
                 ds = await e.client.send_file(
-                    e.chat_id, file=ok, force_document=True, thumb=thum
+                    e.chat_id, file=ok, filename=og, force_document=True, thumb=thum
                 )
                 await nnn.delete()
                 org = int(Path(dl).stat().st_size)
