@@ -146,7 +146,7 @@ async def encod(event):
         er = stderr.decode()
         try:
             if er:
-                await e.edit(str(er) + "\n\n**ERROR** Contact @SenpaiAF")
+                await e.edit(str(er) + "\n\n**ERROR** Contact @Nirusaki")
                 WORKING.clear()
                 os.remove(dl)
                 return os.remove(out)
