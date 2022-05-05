@@ -125,7 +125,7 @@ async def something():
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
                 rr = "encode"
-                bb = kk.replace(f".{aa}", " Encoded.mkv")
+                bb = kk.replace(f".{aa}", ".mkv")
                 nam = bb.replace("_", " ")
                 nam = bb.replace(".", " ")
                 anitopy_options = {'allowed_delimiters': ' '}
@@ -182,7 +182,7 @@ async def something():
                         ),
                     )
                 ds = await e.client.send_file(
-                    e.chat_id, file=ok, file_name=og, caption=og force_document=True, thumb=thum
+                    e.chat_id, file=ok, file_name=og, caption=og, force_document=True, thumb=thum
                 )
                 await nnn.delete()
                 org = int(Path(dl).stat().st_size)
