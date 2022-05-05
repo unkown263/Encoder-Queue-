@@ -76,10 +76,10 @@ async def encod(event):
         try:
             if hasattr(event.media, "document"):
                 file = event.media.document
-                filename = event.file.name
+                file_name = event.file.name
                 if not filename:
-                    filename = "video_" + dt.now().isoformat("_", "seconds") + ".mp4"
-                dl = dir + filename
+                    file_name = "video_" + dt.now().isoformat("_", "seconds") + ".mp4"
+                dl = dir + file_name
                 with open(dl, "wb") as f:
                     ok = await download_file(
                         client=event.client,
