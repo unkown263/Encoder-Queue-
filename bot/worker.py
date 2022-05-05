@@ -16,6 +16,7 @@
 
 from .FastTelethon import download_file, upload_file
 from .funcn import *
+import anitopy
 
 
 async def stats(e):
@@ -109,7 +110,20 @@ async def encod(event):
         kk = dl.split("/")[-1]
         aa = kk.split(".")[-1]
         rr = f"encode"
-        bb = kk.replace(f".{aa}", " Encoded.mkv")
+        bb = kk.replace(f".{aa}", ".mkv")
+        nam = bb.replace("_", " ")
+        nam = bb.replace(".", " ")
+        anitopy_options = {'allowed_delimiters': ' '}
+        new_name = anitopy.parse(nam)
+        anime_name = new_name['anime_title']  
+        joined_string = f"[{anime_name}]"
+        if 'anime_season' in new_name.keys():
+          animes_season = new_name['anime_season']
+          joined_string = f"{joined_string}" + f" [Season {animes_season}]"
+        if 'episode_number' in new_name.keys():
+          episode_no = new_name['episode_number']
+          joined_string = f"{joined_string}" + f" [Episode {episode_no}]"
+        og = joined_string + " [@S136r136a1]"    
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
         dtime = ts(int((es - s).seconds) * 1000)
@@ -117,7 +131,7 @@ async def encod(event):
         hehe = f"{out};{dl};0"
         wah = code(hehe)
         nn = await e.edit(
-            "`Encodin'..`",
+            "`Encoding'..`",
             buttons=[
                 [Button.inline("STATS", data=f"stats{wah}")],
                 [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
@@ -145,6 +159,7 @@ async def encod(event):
             ok = await upload_file(
                 client=e.client,
                 file=f,
+                filename=og
                 name=out,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                     progress(d, t, nnn, ttt, "uploading..")
