@@ -1,6 +1,6 @@
 ## Queue Compressor Bot (For Single Users)
 
-[![Deploy](https://www.herokucdn.com/deploy/
+[![Deploy](https://www.heroku.com/deploy/
 
 
 ### Variables
