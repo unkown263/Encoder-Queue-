@@ -1,6 +1,6 @@
 ## Queue Compressor Bot (For Single Users)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Funknown263%2FEncoder-Queue-%2Ftree%2Fpatch-1&template=https%3A%2F%2Fgithub.com%2Funknown263%2FEncoder-Queue-%2Ftree%2Fpatch-1)
 
 
 ### Variables
