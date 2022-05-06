@@ -159,7 +159,7 @@ async def encod(event):
             ok = await upload_file(
                 client=e.client,
                 file=f,
-                file_name=og,
+                filename=og,
                 caption=og,
                 name=out,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
@@ -167,7 +167,7 @@ async def encod(event):
                 ),
             )
         ds = await e.client.send_file(
-            e.chat_id, file=ok, file_name=og, caption=og, force_document=True, thumb=thum
+            e.chat_id, file=ok, filename=og, caption=og, force_document=True, thumb=thum
         )
         await nnn.delete()
         org = int(Path(dl).stat().st_size)
