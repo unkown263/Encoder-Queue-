@@ -159,7 +159,7 @@ async def something():
                 er = stderr.decode()
                 try:
                     if er:
-                        await e.edit(str(er) + "\n\n**ERROR** Contact @SenpaiAF")
+                        await e.edit(str(er) + "\n\n**ERROR** Contact @GRAMPEROSE")
                         QUEUE.pop(list(QUEUE.keys())[0])
                         os.remove(dl)
                         os.remove(out)
@@ -169,7 +169,7 @@ async def something():
                 ees = dt.now()
                 ttt = time.time()
                 await nn.delete()
-                nnn = await e.client.send_message(e.chat_id, "`Uploading...`")
+                nnn = await e.client.send_message(e.chat_id, f"Uploading ```{og}```")
                 with open(out, "rb") as f:
                     ok = await upload_file(
                         client=e.client,
@@ -177,7 +177,7 @@ async def something():
                         caption=og,
                         name=og,
                         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                            progress(d, t, nnn, ttt, "uploading..")
+                            progress(d, t, nnn, ttt, "Uploading..")
                         ),
                     )
                 ds = await e.client.send_file(
