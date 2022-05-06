@@ -57,6 +57,7 @@ async def encod(event):
         except BaseException:
             pass
         if WORKING or QUEUE:
+            await asyncio.sleep(3)    
             xxx = await event.reply("`Adding To Queue`")
             # id = pack_bot_file_id(event.media)
             doc = event.media.document
@@ -131,7 +132,7 @@ async def encod(event):
         hehe = f"{out};{dl};0"
         wah = code(hehe)
         nn = await e.edit(
-            "`Encoding'..`",
+            f"Encoding --> {og}",
             buttons=[
                 [Button.inline("STATS", data=f"stats{wah}")],
                 [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
