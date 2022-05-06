@@ -168,7 +168,12 @@ async def encod(event):
                 ),
             )
         ds = await e.client.send_file(
-            e.chat_id, file=ok, file_name=og, caption=og, force_document=True, thumb=thum
+            e.chat_id,
+            file=ok,
+            file_name=og,
+            caption=og,
+            force_document=True,
+            thumb=thum,
         )
         await nnn.delete()
         org = int(Path(dl).stat().st_size)
