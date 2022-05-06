@@ -145,7 +145,7 @@ async def something():
                 hehe = f"{out};{dl};{list(QUEUE.keys())[0]}"
                 wah = code(hehe)
                 nn = await e.edit(
-                    "`Encoding'..`",
+                    f"`Encodin {og}`",
                     buttons=[
                         [Button.inline("STATS", data=f"stats{wah}")],
                         [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
@@ -174,14 +174,13 @@ async def something():
                     ok = await upload_file(
                         client=e.client,
                         file=f,
-                        caption=og,
                         name=og,
                         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                             progress(d, t, nnn, ttt, "Uploading..")
                         ),
                     )
                 ds = await e.client.send_file(
-                    e.chat_id, file=ok, caption=og, name=og, force_document=True, thumb=thum
+                    e.chat_id, file=ok, name=og, force_document=True, thumb=thum
                 )
                 await nnn.delete()
                 org = int(Path(dl).stat().st_size)
