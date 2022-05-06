@@ -14,9 +14,10 @@
 # https://github.com/1Danish-00/CompressorQueue/blob/main/License> .
 
 
+import anitopy
+
 from .FastTelethon import download_file, upload_file
 from .funcn import *
-import anitopy
 
 
 async def stats(e):
@@ -113,17 +114,17 @@ async def encod(event):
         bb = kk.replace(f".{aa}", ".mkv")
         nam = bb.replace("_", " ")
         nam = bb.replace(".", " ")
-        anitopy_options = {'allowed_delimiters': ' '}
+        anitopy_options = {"allowed_delimiters": " "}
         new_name = anitopy.parse(nam)
-        anime_name = new_name['anime_title']  
+        anime_name = new_name["anime_title"]
         joined_string = f"[{anime_name}]"
-        if 'anime_season' in new_name.keys():
-          animes_season = new_name['anime_season']
-          joined_string = f"{joined_string}" + f" [Season {animes_season}]"
-        if 'episode_number' in new_name.keys():
-          episode_no = new_name['episode_number']
-          joined_string = f"{joined_string}" + f" [Episode {episode_no}]"
-        og = joined_string + " [@S136r136a1]"    
+        if "anime_season" in new_name.keys():
+            animes_season = new_name["anime_season"]
+            joined_string = f"{joined_string}" + f" [Season {animes_season}]"
+        if "episode_number" in new_name.keys():
+            episode_no = new_name["episode_number"]
+            joined_string = f"{joined_string}" + f" [Episode {episode_no}]"
+        og = joined_string + " [@S136r136a1]"
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
         dtime = ts(int((es - s).seconds) * 1000)
